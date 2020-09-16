@@ -1,0 +1,27 @@
+{
+  "name": "roman-calculator",
+  "version": "1.0.0",
+  "description": "Mos team and friends to help each other.",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atthana-p/roman-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atthana-p/roman-calculator/issues"
+  },
+  "homepage": "https://github.com/atthana-p/roman-calculator#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.6.0",
+    "jest": "^26.4.0",
+    "ts-jest": "^26.2.0",
+    "typescript": "^3.9.7"
+  }
+}
