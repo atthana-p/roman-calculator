@@ -154,6 +154,49 @@ describe('Roman to Decimal', () => {
         expect(result).toEqual(1338);
       });
     });
+
+    describe('Decreasing', () => {
+      it('should correctly convert single decrease I from V', () => {
+        const result = roman_to_dec('IV');
+
+        // then
+        expect(result).toEqual(4);
+      });
+      it('should correctly convert single decrease I from X', () => {
+        const result = roman_to_dec('IX');
+
+        // then
+        expect(result).toEqual(9);
+      });
+
+      it('should correctly convert single decrease X from L', () => {
+        const result = roman_to_dec('XL');
+
+        // then
+        expect(result).toEqual(40);
+      });
+
+      it('should correctly convert single decrease X from C', () => {
+        const result = roman_to_dec('XC');
+
+        // then
+        expect(result).toEqual(90);
+      });
+
+      it('should correctly convert single decrease C from D', () => {
+        const result = roman_to_dec('CD');
+
+        // then
+        expect(result).toEqual(400);
+      });
+
+      it('should correctly convert single decrease C from M', () => {
+        const result = roman_to_dec('CM');
+
+        // then
+        expect(result).toEqual(900);
+      });
+    });
   });
 
   describe('Error cases', () => {
@@ -193,6 +236,26 @@ describe('Roman to Decimal', () => {
       it('should error when specified six C', () => {
         expect(() => {
           roman_to_dec('DCCCCCC');
+        }).toThrow();
+      });
+    });
+
+    describe('Wrong sequences', () => {
+      it('should error when decreasing V', () => {
+        expect(() => {
+          roman_to_dec('VX');
+        }).toThrow();
+      });
+
+      it('should error when decreasing L', () => {
+        expect(() => {
+          roman_to_dec('LD');
+        }).toThrow();
+      });
+
+      it('should error when decreasing D', () => {
+        expect(() => {
+          roman_to_dec('DM');
         }).toThrow();
       });
     });
