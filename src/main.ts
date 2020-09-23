@@ -130,3 +130,12 @@ export function dec_to_roman(dec: number): string {
     return decPairWithRoman[maxNumber.toString()].toLocaleUpperCase() + dec_to_roman(dec - maxNumber)
     
 }
+
+export function calculate(number1: string, number2: string): string {
+    const convertedNumber1: number = roman_to_dec(number1);
+    const convertedNumber2: number = roman_to_dec(number2);
+
+    const sum: number = convertedNumber1 + convertedNumber2;
+
+    return dec_to_roman(sum);
+}
