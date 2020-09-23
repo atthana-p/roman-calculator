@@ -4,6 +4,10 @@ type RomanPairWithDec = {
     [key: string]: number
 }
 
+type DecPairWithRoman = {
+    [key: string]: string
+}
+
 const roman1CharacterPairWithDec: RomanPairWithDec = {
     i: 1,
     v: 5,
@@ -21,6 +25,22 @@ const roman2CharacterPairWithDec: RomanPairWithDec = {
     xc: 90,
     cd: 400,
     cm: 900,
+}
+
+const decPairWithRoman: DecPairWithRoman = {
+    1: 'i',
+    4: 'iv',
+    5: 'v',
+    9: 'ix',
+    10: 'x',
+    40: 'xl',
+    50: 'l',
+    90: 'xc',
+    100: 'c',
+    400: 'cd',
+    900: 'cm',
+    1000: 'm',
+
 }
 
 export function validateRomanNumber(roman: string): string {
@@ -91,4 +111,22 @@ export function roman_to_dec(roman: string): number {
     const romanCharacters: string[] = validatedRoman.split('');
 
     return convertRoman(romanCharacters)
+}
+
+export function dec_to_roman(dec: number): string {
+    if (dec === 0) {
+        return ''
+    }
+
+    const dec2roman: number[] = Object.keys(decPairWithRoman).map(str => +str);
+
+    const maxNumber: number = dec2roman.reduce((result: number, eachNumber: number) => {
+        if (eachNumber > result && eachNumber <= dec) {
+            result = eachNumber
+        }
+        return result;
+    }, 0)
+
+    return decPairWithRoman[maxNumber.toString()].toLocaleUpperCase() + dec_to_roman(dec - maxNumber)
+    
 }
