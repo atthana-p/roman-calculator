@@ -5,7 +5,7 @@ type RomanPairWithDec = {
 }
 
 type DecPairWithRoman = {
-    [key: number]: string
+    [key: string]: string
 }
 
 const roman1CharacterPairWithDec: RomanPairWithDec = {
@@ -113,15 +113,20 @@ export function roman_to_dec(roman: string): number {
     return convertRoman(romanCharacters)
 }
 
-// export function dec_to_roman(dec: number): string {
-//     if (dec === 0) {
-//         return ''
-//     }
-//     const dec2roman: string[] = Object.keys(decPairWithRoman) 
-//     console.log(dec2roman)
+export function dec_to_roman(dec: number): string {
+    if (dec === 0) {
+        return ''
+    }
 
-//     return ""
+    const dec2roman: number[] = Object.keys(decPairWithRoman).map(str => +str);
+
+    const maxNumber: number = dec2roman.reduce((result: number, eachNumber: number) => {
+        if (eachNumber > result && eachNumber <= dec) {
+            result = eachNumber
+        }
+        return result;
+    }, 0)
+
+    return decPairWithRoman[maxNumber.toString()].toLocaleUpperCase() + dec_to_roman(dec - maxNumber)
     
-// }
-console.log("GG")
-// dec_to_roman(10)
+}
