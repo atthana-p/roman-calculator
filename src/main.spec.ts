@@ -1,10 +1,10 @@
-import { calculate } from './main';
+import { dec_to_roman } from './main';
 
 describe('Calculator', () => {
   it('should be zero', () => {
-    const result = calculate('');
+    const result = dec_to_roman(1);
 
     // then
-    expect(result).toEqual(0);
+    expect(result).toEqual('I');
   });
 });
