@@ -1,4 +1,4 @@
-import { dec_to_roman } from './main';
+import { dec_to_roman } from '../main';
 
 describe('Roman to Decimal', () => {
   it('should correctly convert digit I', () => {
