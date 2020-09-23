@@ -47,12 +47,12 @@ export function validateRomanNumber(roman: string): string {
     const romanLowerCase = roman.trim().toLowerCase();
 
     // V,L,D can't have more than one
-    if (/^v{2,}|l{2,}|d{2,}$/.test(romanLowerCase)) {
+    if (/v{2,}|l{2,}|d{2,}/.test(romanLowerCase)) {
         throw "V,L,D can't have more than one.";
     }
 
     // I,X,C can't have more than three
-    if (/^i{4,}|x{4,}|c{4,}$/.test(romanLowerCase)) {
+    if (/i{4,}|x{4,}|c{4,}/.test(romanLowerCase)) {
         throw "I,X,C can't have more than three.";
     }
 
