@@ -38,6 +38,7 @@ const decPairWithRoman: DecPairWithRoman = {
     90: 'xc',
     100: 'c',
     400: 'cd',
+    500: 'c',
     900: 'cm',
     1000: 'm',
 
