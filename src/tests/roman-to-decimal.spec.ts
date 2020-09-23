@@ -1,4 +1,4 @@
-import { roman_to_dec } from './main';
+import { roman_to_dec } from '../main';
 
 describe('Roman to Decimal', () => {
   it('should correctly convert digit I', () => {
@@ -90,5 +90,19 @@ describe('Roman to Decimal', () => {
 
     // then
     expect(result).toEqual(11);
+  });
+
+  it('should correctly convert increased from L', () => {
+    const result = roman_to_dec('LII');
+
+    // then
+    expect(result).toEqual(52);
+  });
+
+  it('should correctly convert multiple increased from L', () => {
+    const result = roman_to_dec('LVIII');
+
+    // then
+    expect(result).toEqual(58);
   });
 });
